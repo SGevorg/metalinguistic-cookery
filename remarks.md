@@ -27,7 +27,8 @@
 
    Operation on ingredients should be performed as well.
 
+## Materials 
 
-## Creat Program
+- SICP [Metalinguistic Abstraction](https://mitpress.mit.edu/sicp/full-text/sicp/book/node75.html)
+- List of [Cooking Techniques](https://en.wikipedia.org/wiki/List_of_cooking_techniques)
 
-Program should build a receipe definition format and interpret any such format into a program on the above defined language.

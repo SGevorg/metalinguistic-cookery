@@ -1,5 +1,7 @@
 # Metalinguistic Cookery
 
-This small project is created to demonstrate the concept of the [Metalinguistic Abstraction](https://mitpress.mit.edu/sicp/full-text/sicp/book/node75.html)
+The following project is created to demonstrate the concepts and ideas of Metalinguistic Abstractions.
+Metalinguistic Abstractions are a good tool and mindset in general to manage the complexity of programs.
 
+See the [remarks](./remarks.md) for more information.
 
