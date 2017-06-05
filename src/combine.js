@@ -7,27 +7,20 @@ var combiner = module.exports = {}
 
 */
 
-combiner.mix = function (ingredient1, ingredient2) {
-  var name = [
-    ingredient1.name,
-    'mix with',
-    ingredient2.name].join(' ')  
-  return {
-    name: name,
-    quantity: ingredient1.quantity + ingredient2.quantity,
-    steps: ingredient1.steps.concat(ingredient2.steps).concat(name)
-  };
+combiner.mix = function (ing1, ing2) {
+  return ing1.combine(ing2, (ing1Name, ing2Name) => {
+    return {
+      name: ["mixed", ing1Name, "and", ing2Name].join(" "),
+      action: ["mix", ing1Name, "and", ing2Name].join(" ")
+    }
+  });
 }
 
-combiner.stack = function (ingredient1, ingredient2) {
-  var name = [
-    'stack',
-    ingredient1.name,
-    'with',
-    ingredient2.name].join(' ')
-  return {
-    name: name,
-    quantity: ingredient1.quantity + ingredient2.quantity,
-    steps: ingredient.steps.concat(ingredient2.steps).concat(name)
-  };
+combiner.stack = function (ing1, ing2) {
+  return ing1.combine(ing2, (ing1Name, ing2Name) => {
+    return {
+      name: ["stacked", ing2Name, "on", ing1Name].join(" "),
+      action: ["stack", ing2Name, "on", ing1Name].join(" ")
+    }
+  });
 }

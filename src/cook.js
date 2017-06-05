@@ -1,61 +1,29 @@
 var cooker = module.exports = {}
 
 cooker.saute = function (ingredient) {
-  var name = [
-    'saute the',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
-}
+  return cookTransform("sauteed", "saute", ingredient);
+};
 
 cooker.heat = function (ingredient) {
-  var name = [
-    'heat the',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
-}
+  return cookTransform("heated", "heat", ingredient);
+};
 
 cooker.roast = function (ingredient) {
-  var name = [
-    'roast the',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
-}
+  return cookTransform("roasted", "roast", ingredient);
+};
 
 cooker.braise = function (ingredient) {
-  var name = [
-    'braise the',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
-}
+  return cookTransform("braised", "braise", ingredient);
+};
 
 cooker.boil = function (ingredient) {
-  var name = [
-    'boil the',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
+  return cookTransform("boiled", "boil", ingredient);
+};
+
+function cookTransform(state, action, ingredient) {
+  return ingredient.transform(
+    [state, ingredient.name].join(" "),
+    ingredient.quantity,
+    [action, ingredient.name].join(" ")
+  );
 }

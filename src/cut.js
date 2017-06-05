@@ -1,37 +1,21 @@
 var cutter = module.exports = {}
 
 cutter.slice = function (ingredient) {
-  var name = [
-    'slice',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
+  return cutTransform("sliced", "slice", ingredient);
 };
 
 cutter.dice = function (ingredient) {
-  var name = [
-    'dice',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
+  return cutTransform("diced", "dice", ingredient);
 };
 
 cutter.chop = function (ingredient) {
-  var name = [
-    'chop',
-    ingredient.name
-  ].join(' ')
-  return {
-    name: name,
-    quantity: ingredient.quantity,
-    steps: ingredient.steps.concat(name)
-  }
+  return cutTransform("chopped", "chop", ingredient);
 };
+
+function cutTransform(state, action, ingredient) {
+  return ingredient.transform(
+    [state, ingredient.name].join(" "),
+    ingredient.quantity,
+    [action, ingredient.name].join(" ")
+  );
+}

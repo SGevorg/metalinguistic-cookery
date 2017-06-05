@@ -1,30 +1,18 @@
 var seasoner = module.exports = {}
 
 seasoner.rub = function (ing, seasoning) {
-  var name = [
-    'rub',
-    ing.name,
-    'with',
-    seasoning.name
-  ].join(' ');
-  return {
-    name: name,
-    quantity: ing.quantity + seasoning.quantity,
-    steps: ing.steps.concat(seasoning.steps).concat(name)
-  };
+  return seasoningTransform("rubbed", "rub", ing, seasoning);
 };
 
 seasoner.sprinkle = function (ing, seasoning) {
-  var name = [
-    'sprinkle',
-    ing.name,
-    'with',
-    seasoning.name
-  ].join(' ');
-  
-  return {
-    name: name,
-    quantity: ing.quantity + seasoning.quantity,
-    steps: ing.steps.concat(seasoning.steps).concat(name)
-  };
+  return seasoningTransform("sprinkled", "sprinkle", ing, seasoning);
 };
+
+function seasoningTransform(state, action, ing, seasoning) {
+  return ing.combine(seasoning, (ing1Name, ing2Name) => {
+    return {
+      name: [ing1Name, state, , "with", ing2Name].join(" "),
+      action: [action, ing1Name, "with", ing2Name].join(" ")
+    }
+  });
+}
