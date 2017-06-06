@@ -1,5 +1,10 @@
 var seasoner = module.exports = {}
 
+/*
+  Abstraction on top of ingredient language for seasoning techniques.
+*/
+
+
 seasoner.rub = function (ing, seasoning) {
   return seasoningTransform("rubbed", "rub", ing, seasoning);
 };

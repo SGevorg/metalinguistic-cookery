@@ -1,10 +1,8 @@
 var combiner = module.exports = {}
 
 /*
-  Combine is the means of combination for the ingredients of the food.
-  Ingredients can be combined in different ways:
-  1. 
-
+  Layer on top of ingredients to abstract the process of mixing the ingredients with each other.
+  This layer provides the necessary language to express the mixing of ingredients
 */
 
 combiner.mix = function (ing1, ing2) {

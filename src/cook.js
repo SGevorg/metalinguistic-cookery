@@ -1,5 +1,10 @@
 var cooker = module.exports = {}
 
+/*
+   Abstraction of various cooking techniques over the ingrdient language.
+   Note: Implementation of Details are Secondary
+*/
+
 cooker.saute = function (ingredient) {
   return cookTransform("sauteed", "saute", ingredient);
 };

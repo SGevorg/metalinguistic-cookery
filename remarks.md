@@ -31,4 +31,5 @@
 
 - SICP [Metalinguistic Abstraction](https://mitpress.mit.edu/sicp/full-text/sicp/book/node75.html)
 - List of [Cooking Techniques](https://en.wikipedia.org/wiki/List_of_cooking_techniques)
+- [Slides](https://sgevorg.github.io/slides/metalinguistic-abstractions/index.html#/)
 

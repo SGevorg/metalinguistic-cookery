@@ -2,7 +2,9 @@ var ingredient = require('./src/ingredient');
 var combiner = require('./src/combine');
 var seasoner = require('./src/season');
 var cook = require('./src/cook');
-var cut = require('./src/cut') 
+var cut = require('./src/cut'); 
+
+// Cook programs in terms of cook, cut, season.
 
 var potato = ingredient.create('potatoes', 300);
 var salt = ingredient.create('salt', 10);

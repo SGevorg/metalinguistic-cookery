@@ -1,5 +1,9 @@
 var cutter = module.exports = {}
 
+/*
+  Abstraction on top of ingredient for cutting techniques.
+*/
+
 cutter.slice = function (ingredient) {
   return cutTransform("sliced", "slice", ingredient);
 };

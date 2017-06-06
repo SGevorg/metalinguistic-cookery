@@ -1,5 +1,7 @@
 var ingredient = require('./src/ingredient');
 
+// program in terms of ingredient language.
+
 var pepper = ingredient.create("pepper", 40)
 
 var dicedPepper = pepper.transform("diced pepper", 40, "dice the pepper")

@@ -5,3 +5,6 @@ Metalinguistic Abstractions are a good tool and mindset in general to manage the
 
 See the [remarks](./remarks.md) for more information.
 
+The code is prepared to demonstrate various code complexity management techniques for the workshop at [iterate hackerspace](http://iteratehackerspace.com/)
+
+
